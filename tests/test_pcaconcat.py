@@ -3,19 +3,21 @@
 """Tests for `pcaconcat` package."""
 
 
-import unittest
-
+import os
+import pandas as pd 
 from pcaconcat import pcaconcat
 
 
-class TestPcaconcat(unittest.TestCase):
-    """Tests for `pcaconcat` package."""
 
-    def setUp(self):
-        """Set up test fixtures, if any."""
 
-    def tearDown(self):
-        """Tear down test fixtures, if any."""
 
-    def test_000_something(self):
-        """Test something."""
+
+
+def test_pcaconcat( ):
+    pwd_path = os.path.abspath(os.path.dirname(__file__))
+    pca_path = os.path.join(pwd_path, 'aaa.xlsx')
+    df = pd.read_excel(pca_path)
+    print(df)
+    df2 = pcaconcat(df,"city")
+    print(df2)
+    
